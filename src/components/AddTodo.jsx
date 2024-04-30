@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import styles from "./AddTodo.module.scss";
-import url from "./../url";
+import { url } from "./../url";
 
 export default function AddTodo({ addTodo = () => {} }) {
   const [value, setValue] = useState("");
