@@ -1,0 +1,12 @@
+.field {
+  border-radius: 20px;
+  padding: 8px 8px;
+  border: 1px solid black;
+  &::placeholder {
+    font-style: italic;
+  }
+  &:focus-visible {
+    // border: 2px solid var(--primary);
+    outline: 1px solid var(--primary);
+  }
+}

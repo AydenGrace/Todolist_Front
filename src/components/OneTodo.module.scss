@@ -1,0 +1,21 @@
+.item {
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  min-width: 500px;
+  input {
+    text-align: center;
+    background-color: none;
+    border: none;
+    &:disabled {
+      background: none;
+      cursor: pointer;
+    }
+  }
+}
+.done {
+  text-decoration: line-through;
+  font-style: italic;
+  color: green;
+  font-weight: 600;
+}
