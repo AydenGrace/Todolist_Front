@@ -4,6 +4,7 @@ import AddTodo from "./components/AddTodo";
 import Todolist from "./components/Todolist";
 import styles from "./App.module.scss";
 import { url } from "./url.js";
+import loading_logo from "./assets/loading.gif";
 
 function App() {
   const [todolist, setTodolist] = useState([]);
@@ -67,7 +68,8 @@ function App() {
         <h1 className={`mb-20 ${styles.title}`}>Todo List</h1>
         <AddTodo addTodo={addTodo} />
         {loading ? (
-          <p>Chargement en cours...</p>
+          // <p>Chargement en cours...</p>
+          <img src={loading_logo} alt="loading..." />
         ) : (
           <Todolist
             todolist={todolist}
