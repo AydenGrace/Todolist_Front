@@ -69,7 +69,7 @@ function App() {
         <AddTodo addTodo={addTodo} />
         {loading ? (
           // <p>Chargement en cours...</p>
-          <img src={loading_logo} alt="loading..." />
+          <img src={loading_logo} alt="loading..." style={{ width: "50px" }} />
         ) : (
           <Todolist
             todolist={todolist}
