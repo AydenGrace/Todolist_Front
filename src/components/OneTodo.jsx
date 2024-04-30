@@ -17,7 +17,7 @@ export default function OneTodo({
       <button
         className="btn btn-primary mr-15"
         onClick={() => {
-          toggleDone(todo.id);
+          toggleDone(todo._id);
         }}
       >
         Valider
@@ -25,7 +25,7 @@ export default function OneTodo({
       <button
         className="btn btn-primary mr-15"
         onClick={() => {
-          toggleEdit(todo.id);
+          toggleEdit(todo._id);
         }}
       >
         Modifier
@@ -33,7 +33,7 @@ export default function OneTodo({
       <button
         className="btn btn-primary "
         onClick={() => {
-          deleteTodo(todo.id);
+          deleteTodo(todo._id);
         }}
       >
         Supprimer

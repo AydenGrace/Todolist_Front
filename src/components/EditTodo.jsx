@@ -11,12 +11,12 @@ export default function EditTodo({ todo, modifyTodo = () => {} }) {
 
   function handleClick() {
     if (valueTodo.length) {
-      modifyTodo(todo.id, valueTodo);
+      modifyTodo(todo._id, valueTodo);
     }
   }
 
   function handleCancel() {
-    modifyTodo(todo.id, todo.content);
+    modifyTodo(todo._id, todo.content);
   }
   return (
     <li className={`w-100 f-center m-10 ${styles.item} `}>

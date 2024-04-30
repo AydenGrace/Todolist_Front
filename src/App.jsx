@@ -32,7 +32,7 @@ function App() {
   function toggleDone(id) {
     setTodolist(
       todolist.map((todo) =>
-        todo.id === id ? { ...todo, done: !todo.done } : todo
+        todo._id === id ? { ...todo, done: !todo.done } : todo
       )
     );
   }
@@ -40,19 +40,19 @@ function App() {
   function toggleEdit(id) {
     setTodolist(
       todolist.map((todo) =>
-        todo.id === id ? { ...todo, edit: !todo.edit } : todo
+        todo._id === id ? { ...todo, edit: !todo.edit } : todo
       )
     );
   }
 
   function deleteTodo(id) {
-    setTodolist(todolist.filter((todo) => todo.id !== id));
+    setTodolist(todolist.filter((todo) => todo._id !== id));
   }
 
   function modifyTodo(id, content) {
     setTodolist(
       todolist.map((todo) =>
-        todo.id === id ? { ...todo, edit: false, content } : todo
+        todo._id === id ? { ...todo, edit: false, content } : todo
       )
     );
   }

@@ -15,7 +15,7 @@ export default function Todolist({
     <ul className={`${styles.list}`}>
       {todolist.map((todo, i) =>
         todo.edit ? (
-          <EditTodo key={`${todo.id}`} todo={todo} modifyTodo={modifyTodo} />
+          <EditTodo key={`${todo._id}`} todo={todo} modifyTodo={modifyTodo} />
         ) : (
           <OneTodo
             key={`${todo._id}`}
