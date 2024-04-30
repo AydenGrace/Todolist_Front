@@ -7,10 +7,12 @@ import { url } from "./url.js";
 
 function App() {
   const [todolist, setTodolist] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function getTodos() {
       try {
+        setLoading(true);
         const response = await fetch(`${url}/api/todos/`);
         if (response.ok) {
           const todos = await response.json();
@@ -18,6 +20,8 @@ function App() {
         }
       } catch (e) {
         console.log(e);
+      } finally {
+        setLoading(false);
       }
     }
     getTodos();
@@ -62,13 +66,17 @@ function App() {
       <div className="f-center flex-column card p-20">
         <h1 className={`mb-20 ${styles.title}`}>Todo List</h1>
         <AddTodo addTodo={addTodo} />
-        <Todolist
-          todolist={todolist}
-          toggleDone={toggleDone}
-          deleteTodo={deleteTodo}
-          toggleEdit={toggleEdit}
-          modifyTodo={modifyTodo}
-        />
+        {loading ? (
+          <p>Chargement en cours...</p>
+        ) : (
+          <Todolist
+            todolist={todolist}
+            toggleDone={toggleDone}
+            deleteTodo={deleteTodo}
+            toggleEdit={toggleEdit}
+            modifyTodo={modifyTodo}
+          />
+        )}
       </div>
     </div>
   );
