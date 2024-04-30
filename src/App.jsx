@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import AddTodo from "./components/AddTodo";
 import Todolist from "./components/Todolist";
 import styles from "./App.module.scss";
-import url from "./url.js";
+import { url } from "./url.js";
 
 function App() {
   const [todolist, setTodolist] = useState([]);
